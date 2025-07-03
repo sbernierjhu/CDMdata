@@ -1,0 +1,477 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[     18115,        469]
+NotebookOptionsPosition[     16895,        441]
+NotebookOutlinePosition[     17296,        457]
+CellTagsIndexPosition[     17253,        454]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"definition", " ", "of", " ", "function"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"CubicDeviationMetric", "[", 
+     RowBox[{"{", 
+      RowBox[{
+      "a_", ",", "b_", ",", "c_", ",", "\[Alpha]_", ",", "\[Beta]_", ",", 
+       "\[Gamma]_"}], "}"}], "]"}], ":=", 
+    RowBox[{
+     RowBox[{"Abs", "[", 
+      RowBox[{
+       FractionBox["a", 
+        RowBox[{"Sqrt", "[", 
+         RowBox[{
+          RowBox[{"a", "^", "2"}], "+", 
+          RowBox[{"c", "^", "2"}], "-", 
+          RowBox[{"2", "a", "*", "c", "*", 
+           RowBox[{"Cos", "[", 
+            RowBox[{"\[Beta]", " ", "Degree"}], "]"}]}]}], "]"}]], "-", 
+       FractionBox["1", 
+        SqrtBox["2"]]}], "]"}], "+", 
+     RowBox[{"Abs", "[", 
+      RowBox[{
+       FractionBox["c", 
+        RowBox[{"Sqrt", "[", 
+         RowBox[{
+          RowBox[{"a", "^", "2"}], "+", 
+          RowBox[{"c", "^", "2"}], "-", 
+          RowBox[{"2", "a", "*", "c", "*", 
+           RowBox[{"Cos", "[", 
+            RowBox[{"\[Beta]", " ", "Degree"}], "]"}]}]}], "]"}]], "-", 
+       FractionBox["1", 
+        SqrtBox["2"]]}], "]"}], "+", 
+     RowBox[{"Abs", "[", 
+      RowBox[{
+       FractionBox["a", 
+        RowBox[{"Sqrt", "[", 
+         RowBox[{
+          RowBox[{"a", "^", "2"}], "+", 
+          RowBox[{"b", "^", "2"}], "-", 
+          RowBox[{"2", "a", "*", "b", "*", 
+           RowBox[{"Cos", "[", 
+            RowBox[{"\[Gamma]", " ", "Degree"}], "]"}]}]}], "]"}]], "-", 
+       FractionBox["1", 
+        SqrtBox["2"]]}], "]"}], "+", 
+     RowBox[{"Abs", "[", 
+      RowBox[{
+       FractionBox["b", 
+        RowBox[{"Sqrt", "[", 
+         RowBox[{
+          RowBox[{"a", "^", "2"}], "+", 
+          RowBox[{"b", "^", "2"}], "-", 
+          RowBox[{"2", "a", "*", "b", "*", 
+           RowBox[{"Cos", "[", 
+            RowBox[{"\[Gamma]", " ", "Degree"}], "]"}]}]}], "]"}]], "-", 
+       FractionBox["1", 
+        SqrtBox["2"]]}], "]"}], "+", 
+     RowBox[{"Abs", "[", 
+      RowBox[{
+       FractionBox["c", 
+        RowBox[{"Sqrt", "[", 
+         RowBox[{
+          RowBox[{"b", "^", "2"}], "+", 
+          RowBox[{"c", "^", "2"}], "-", 
+          RowBox[{"2", "b", "*", "c", "*", 
+           RowBox[{"Cos", "[", 
+            RowBox[{"\[Alpha]", " ", "Degree"}], "]"}]}]}], "]"}]], "-", 
+       FractionBox["1", 
+        SqrtBox["2"]]}], "]"}], "+", 
+     RowBox[{"Abs", "[", 
+      RowBox[{
+       FractionBox["b", 
+        RowBox[{"Sqrt", "[", 
+         RowBox[{
+          RowBox[{"b", "^", "2"}], "+", 
+          RowBox[{"c", "^", "2"}], "-", 
+          RowBox[{"2", "b", "*", "c", "*", 
+           RowBox[{"Cos", "[", 
+            RowBox[{"\[Alpha]", " ", "Degree"}], "]"}]}]}], "]"}]], "-", 
+       FractionBox["1", 
+        SqrtBox["2"]]}], "]"}]}]}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{
+     "Because", " ", "Mathematica", " ", "is", " ", "a", " ", "symbolic", " ",
+       "language"}], ",", " ", 
+     RowBox[{
+     "no", " ", "rounding", " ", "is", " ", "required", " ", "to", " ", 
+      "avoid", " ", "nonzero", " ", "values", " ", "for", " ", "angles", " ", 
+      "of", " ", "90", "\[Degree]"}]}], "*)"}]}]}]], "Input",
+ CellChangeTimes->{{3.9605080974005756`*^9, 3.9605081771233406`*^9}, {
+  3.960508219942316*^9, 3.960508247767149*^9}, {3.9605083636822414`*^9, 
+  3.960508365562607*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"784ed22e-e6a0-7e49-bb3e-2e6efd5fddbd"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"example", " ", "of", " ", "use", " ", "with", " ", "scalars"}], 
+   "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"CubicDeviationMetric", "[", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "2", ",", "3", ",", "90", ",", "85", ",", "67"}], 
+     "}"}], "]"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"CubicDeviationMetric", "[", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2", ",", "3", ",", "90", ",", "85", ",", "67"}], 
+      "}"}], "]"}], "//", "N"}]}]}]], "Input",
+ CellChangeTimes->{{3.9605082551383457`*^9, 3.9605082690565434`*^9}, {
+  3.960508371161009*^9, 3.9605083967777443`*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"725f424c-7362-c242-93fa-b9ca15c7243b"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["1", 
+   SqrtBox["13"]], "+", 
+  FractionBox["2", 
+   SqrtBox[
+    RowBox[{"10", "-", 
+     RowBox[{"6", " ", 
+      RowBox[{"Sin", "[", 
+       RowBox[{"5", " ", "\[Degree]"}], "]"}]}]}]]], "+", 
+  FractionBox["1", 
+   SqrtBox[
+    RowBox[{"5", "-", 
+     RowBox[{"4", " ", 
+      RowBox[{"Sin", "[", 
+       RowBox[{"23", " ", "\[Degree]"}], "]"}]}]}]]]}]], "Output",
+ CellChangeTimes->{{3.960508378971945*^9, 3.9605083971576347`*^9}, 
+   3.96050875641671*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"1f50aa22-9e6e-6a45-baec-9641195d480b"],
+
+Cell[BoxData["1.4664136556026541`"], "Output",
+ CellChangeTimes->{{3.960508378971945*^9, 3.9605083971576347`*^9}, 
+   3.96050875642671*^9},
+ CellLabel->"Out[3]=",ExpressionUUID->"88ab8b39-a059-814e-822d-40b81ab4ad2f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+   "example", " ", "of", " ", "use", " ", "with", " ", "a", " ", "dataset"}], 
+   "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"data", "=", 
+    RowBox[{"Import", "[", "\"\<example data.csv\>\"", "]"}]}], "\[IndentingNewLine]", 
+   RowBox[{"Map", "[", 
+    RowBox[{
+     RowBox[{"CubicDeviationMetric", "//", "N"}], ",", 
+     RowBox[{"Drop", "[", 
+      RowBox[{"data", ",", "1"}], "]"}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.960508281578619*^9, 3.9605083121086693`*^9}, {
+  3.9605084049791336`*^9, 3.9605084182520275`*^9}, {3.960508503816578*^9, 
+  3.9605085141484013`*^9}, {3.9605085624197254`*^9, 3.9605085727318573`*^9}, {
+  3.960508604321766*^9, 3.96050860761306*^9}},
+ CellLabel->"In[8]:=",ExpressionUUID->"eae5feae-ca32-c144-a400-37006fe43643"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"a\"\>", ",", "\<\"b\"\>", ",", "\<\"c\"\>", 
+     ",", "\<\"alpha\"\>", ",", "\<\"beta\"\>", ",", "\<\"gamma\"\>"}], "}"}],
+    ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "10.43`", ",", "6.54`", ",", "3.58`", ",", "75.`", ",", "75.`", ",", 
+     "63.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "1.043`", ",", "6.054`", ",", "3.058`", ",", "75.`", ",", "75.`", ",", 
+     "63.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "6.`", ",", "12.`", ",", "6.`", ",", "90.`", ",", "90.`", ",", "90.`"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "7.892`", ",", "7.892`", ",", "7.892`", ",", "90.`", ",", "90.`", ",", 
+     "90.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "5.457`", ",", "5.457`", ",", "3.221`", ",", "88.5`", ",", "90.`", ",", 
+     "90.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "5.443`", ",", "6.891`", ",", "4.576`", ",", "90.`", ",", "110.`", ",", 
+     "90.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "3.2`", ",", "4.777`", ",", "6.58`", ",", "27.3`", ",", "27.3`", ",", 
+     "90.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "3.`", ",", "3.`", ",", "5.`", ",", "120.`", ",", "90.`", ",", "90.`"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "4.56`", ",", "6.65`", ",", "7.8`", ",", "89.7`", ",", "88.765`", ",", 
+     "90.103`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "5.625`", ",", "4.325`", ",", "5.864`", ",", "90.`", ",", "80.12`", ",", 
+     "33.71`"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.9605082947982464`*^9, 3.9605083127788296`*^9}, 
+   3.960508357140938*^9, 3.9605085234578857`*^9, {3.960508567680769*^9, 
+   3.9605085731918087`*^9}, 3.9605086082325516`*^9, 3.960508756586706*^9, 
+   3.9605087885004654`*^9},
+ CellLabel->"Out[8]=",ExpressionUUID->"eb97bbbb-2d52-af49-a42f-a96c7fbd8495"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "1.537210001140461`", ",", "2.061915440390526`", ",", "0.8944271909999162`",
+    ",", "0.`", ",", "0.7098450462926947`", ",", "0.6404291879407812`", ",", 
+   "3.4289345575633856`", ",", "0.6287114559993037`", ",", 
+   "0.7334856492522777`", ",", "2.103025847548121`"}], "}"}]], "Output",
+ CellChangeTimes->{{3.9605082947982464`*^9, 3.9605083127788296`*^9}, 
+   3.960508357140938*^9, 3.9605085234578857`*^9, {3.960508567680769*^9, 
+   3.9605085731918087`*^9}, 3.9605086082325516`*^9, 3.960508756586706*^9, 
+   3.9605087885104656`*^9},
+ CellLabel->"Out[9]=",ExpressionUUID->"74d3614c-aa4b-cc48-ad66-3980117aed1e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+    "Mathematica", " ", "is", " ", "a", " ", "good", " ", "tool", " ", "for", 
+     " ", "unit", " ", "cell", " ", "shape", " ", "visualization"}], ",", " ", 
+    RowBox[{"as", " ", 
+     RowBox[{"below", ":"}]}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"Manipulate", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"cubeside", "=", "1"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Grid", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"Row", "[", 
+          RowBox[{"{", 
+           RowBox[{"\"\<CDM = \>\"", ",", 
+            RowBox[{
+             RowBox[{"CubicDeviationMetric", "[", 
+              RowBox[{"{", 
+               RowBox[{
+               "a", ",", "b", ",", "c", ",", "\[Alpha]", ",", "\[Beta]", ",", 
+                "\[Gamma]"}], "}"}], "]"}], "//", "N"}]}], "}"}], "]"}], 
+         "}"}], ",", "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{"Graphics3D", "[", 
+          RowBox[{
+           RowBox[{"{", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"FaceForm", "[", "None", "]"}], ",", 
+             RowBox[{"Parallelepiped", "[", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"b", "*", 
+                    RowBox[{"Sin", "[", 
+                    RowBox[{"\[Alpha]", " ", "Degree"}], "]"}]}], ",", "0", ",", 
+                   RowBox[{"b", "*", 
+                    RowBox[{"Cos", "[", 
+                    RowBox[{"\[Alpha]", " ", "Degree"}], "]"}]}]}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"a", "*", 
+                    RowBox[{"Cos", "[", 
+                    RowBox[{"\[Gamma]", " ", "Degree"}], "]"}]}], ",", 
+                   RowBox[{"a", "*", 
+                    RowBox[{"Sin", "[", 
+                    RowBox[{"\[Gamma]", " ", "Degree"}], "]"}]}], ",", "0"}], 
+                  "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{"0", ",", 
+                   RowBox[{"c", "*", 
+                    RowBox[{"Cos", "[", 
+                    RowBox[{"\[Beta]", " ", "Degree"}], "]"}]}], ",", 
+                   RowBox[{"c", "*", 
+                    RowBox[{"Sin", "[", 
+                    RowBox[{"\[Beta]", " ", "Degree"}], "]"}]}]}], "}"}]}], 
+                "}"}]}], "]"}]}], "}"}], ",", 
+           RowBox[{"ViewPoint", "\[Rule]", 
+            RowBox[{"{", 
+             RowBox[{"1", ",", 
+              RowBox[{"-", "1"}], ",", "1"}], "}"}]}], ",", 
+           RowBox[{"Boxed", "->", "False"}]}], "]"}], "}"}]}], "}"}], 
+      "\[IndentingNewLine]", "]"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"a", ",", "1"}], "}"}], ",", "1", ",", "10"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"b", ",", "1"}], "}"}], ",", "1", ",", "10"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"c", ",", "1"}], "}"}], ",", "1", ",", "10"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"\[Beta]", ",", "90"}], "}"}], ",", "50", ",", "130"}], "}"}], 
+    ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"\[Alpha]", ",", "90"}], "}"}], ",", "50", ",", "130"}], "}"}],
+     ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"\[Gamma]", ",", "90"}], "}"}], ",", "50", ",", "130"}], "}"}],
+     ",", 
+    RowBox[{"TrackedSymbols", ":>", 
+     RowBox[{"{", 
+      RowBox[{
+      "a", ",", "b", ",", "c", ",", "\[Alpha]", ",", "\[Beta]", ",", 
+       "\[Gamma]"}], "}"}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.9605079687932816`*^9, 3.960508001797241*^9}, 
+   3.9605086844941273`*^9},
+ CellLabel->"In[10]:=",ExpressionUUID->"3da8d601-dc51-e443-90c6-0063e90ba928"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 1, $CellContext`b$$ = 
+    1, $CellContext`c$$ = 1, $CellContext`\[Alpha]$$ = 
+    90, $CellContext`\[Beta]$$ = 90, $CellContext`\[Gamma]$$ = 90, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`a$$], 1}, 1, 10, ControlType -> Manipulator}, {{
+       Hold[$CellContext`b$$], 1}, 1, 10, ControlType -> Manipulator}, {{
+       Hold[$CellContext`c$$], 1}, 1, 10, ControlType -> Manipulator}, {{
+       Hold[$CellContext`\[Beta]$$], 90}, 50, 130, ControlType -> 
+      Manipulator}, {{
+       Hold[$CellContext`\[Alpha]$$], 90}, 50, 130, ControlType -> 
+      Manipulator}, {{
+       Hold[$CellContext`\[Gamma]$$], 90}, 50, 130, ControlType -> 
+      Manipulator}}, Typeset`size$$ = {
+    180., {95.53896495155058, 101.27089875554665`}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True, 
+    Typeset`keyframeActionsQ$$ = False, Typeset`keyframeList$$ = {}}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = 1, $CellContext`b$$ = 
+        1, $CellContext`c$$ = 1, $CellContext`\[Alpha]$$ = 
+        90, $CellContext`\[Beta]$$ = 90, $CellContext`\[Gamma]$$ = 90}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$, Typeset`keyframeActionsQ$$, 
+        Typeset`keyframeList$$}, "Body" :> ($CellContext`cubeside = 1; Grid[{{
+           Row[{"CDM = ", 
+             N[
+              $CellContext`CubicDeviationMetric[{$CellContext`a$$, \
+$CellContext`b$$, $CellContext`c$$, $CellContext`\[Alpha]$$, $CellContext`\
+\[Beta]$$, $CellContext`\[Gamma]$$}]]}]}, {
+           Graphics3D[{
+             FaceForm[None], 
+             
+             Parallelepiped[{0, 0, 
+              0}, {{$CellContext`b$$ Sin[$CellContext`\[Alpha]$$ Degree], 
+                0, $CellContext`b$$ 
+                Cos[$CellContext`\[Alpha]$$ Degree]}, {$CellContext`a$$ 
+                Cos[$CellContext`\[Gamma]$$ Degree], $CellContext`a$$ 
+                Sin[$CellContext`\[Gamma]$$ Degree], 0}, {
+               0, $CellContext`c$$ 
+                Cos[$CellContext`\[Beta]$$ Degree], $CellContext`c$$ 
+                Sin[$CellContext`\[Beta]$$ Degree]}}]}, 
+            ViewPoint -> {1, -1, 1}, Boxed -> False]}}]), 
+      "Specifications" :> {{{$CellContext`a$$, 1}, 1, 
+         10}, {{$CellContext`b$$, 1}, 1, 10}, {{$CellContext`c$$, 1}, 1, 
+         10}, {{$CellContext`\[Beta]$$, 90}, 50, 
+         130}, {{$CellContext`\[Alpha]$$, 90}, 50, 
+         130}, {{$CellContext`\[Gamma]$$, 90}, 50, 130}}, 
+      "Options" :> {
+       TrackedSymbols :> {$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$, $CellContext`\[Alpha]$$, $CellContext`\[Beta]$$, \
+$CellContext`\[Gamma]$$}}, "DefaultOptions" :> {}],
+     ImageSizeCache->{
+      448.15123030658344`, {124.74980479530058`, 130.48173859929665`}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.9605080036074467`*^9, 3.960508686303997*^9, 
+  3.9605087568566856`*^9, 3.9605087902905083`*^9},
+ CellLabel->"Out[10]=",ExpressionUUID->"adb09d14-21f2-db42-b4b5-275be07ba7ff"]
+}, Open  ]]
+},
+WindowSize->{1188, 608.25},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"14.2 for Microsoft Windows (64-bit) (March 14, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"8d9bfaef-4ae2-6d4e-9155-b0060959a83a"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 3466, 97, 176, "Input",ExpressionUUID->"784ed22e-e6a0-7e49-bb3e-2e6efd5fddbd"],
+Cell[CellGroupData[{
+Cell[4045, 121, 733, 17, 66, "Input",ExpressionUUID->"725f424c-7362-c242-93fa-b9ca15c7243b"],
+Cell[4781, 140, 578, 18, 51, "Output",ExpressionUUID->"1f50aa22-9e6e-6a45-baec-9641195d480b"],
+Cell[5362, 160, 217, 3, 32, "Output",ExpressionUUID->"88ab8b39-a059-814e-822d-40b81ab4ad2f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5616, 168, 822, 18, 66, "Input",ExpressionUUID->"eae5feae-ca32-c144-a400-37006fe43643"],
+Cell[6441, 188, 1873, 51, 70, "Output",ExpressionUUID->"eb97bbbb-2d52-af49-a42f-a96c7fbd8495"],
+Cell[8317, 241, 653, 11, 32, "Output",ExpressionUUID->"74d3614c-aa4b-cc48-ad66-3980117aed1e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9007, 257, 4008, 105, 142, "Input",ExpressionUUID->"3da8d601-dc51-e443-90c6-0063e90ba928"],
+Cell[13018, 364, 3861, 74, 272, "Output",ExpressionUUID->"adb09d14-21f2-db42-b4b5-275be07ba7ff"]
+}, Open  ]]
+}
+]
+*)
+
